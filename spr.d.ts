@@ -15,8 +15,8 @@ declare namespace spr {
 		| Color3;
 
 	export type Properties<T extends Instance> = ExtractMembers<WritableInstanceProperties<T>, spr.Tweenable> &
-		(T extends PVInstance ? { Pivot: CFrame } : never) &
-		(T extends Model ? { Scale: number } : never);
+		(T extends PVInstance ? { Pivot: CFrame } : {}) &
+		(T extends Model ? { Scale: number } : {});
 }
 
 interface spr {
